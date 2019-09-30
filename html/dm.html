@@ -1,0 +1,138 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<title>dm</title>
+
+<style>
+  body {
+ background-color:black;
+  }
+* {
+	padding: 0px;
+	margin: 0px;
+}
+
+.names {
+	width: 100%;
+	height: 500px;
+	line-height: 500px;
+	font-size: 70px;
+	text-align: center;
+	color: white;
+}
+
+.btn {
+	width: 100%;
+	height: 50px;
+	line-height: 50px;
+	position: fixed;
+	bottom: 0px;
+}
+
+.start,.stop {
+	width: 50%;
+	float: left;
+	background-color:black;
+	color: white;
+	text-align: center;
+	cursor: pointer;
+}
+</style>
+
+</head>
+<body>
+
+<div class="names" id="names">等待开始</div>
+<div class="btn">
+	<div class="start" onclick=
+showNames();;
+>
+		开始抽取
+	</div>
+	<div class="stop" onclick=
+stop();
+>
+		停止抽取
+	</div>
+</div>
+<script type="text/javascript">
+//定义一个定时器
+var t;
+var i = 0;
+//定义一个数组来存放所有同学的名字
+var names = new Array(
+'吴江晴（第一组）',
+'潘小琴（第一组）',
+'许红华（第一组）',
+'欧阳毅（第一组）',
+'孙    彤（第一组）',
+'杨璐菁（第一组组长）',
+'郭家润（第二组）',
+'赵远昊（第二组）',
+'顾永新（第二组）',
+'杨龙生（第二组）',
+'唐治文（第二组）',
+'王先越（第二组）',
+'赵龙辉（第二组）',
+'唐清欣（第二组组长）',
+'张    慧（第三组）',
+'张泻婷（第三组）',
+'张江湖（第三组）',
+'唐元帅（第三组）',
+'穆    燦（第三组）',
+'徐宇晨（第三组组长）',
+'夏开模（第四组）',
+'严宇星（第四组）',
+'杨忠伟（第四组）',
+'吴    坤（第四组）',
+'吴园春（第四组）',
+'吴赟凯（第四组组长）',
+'吴传杉（第五组）',
+'余瑞雪（第五组）',
+'吴家媛（第五组）',
+'黄    鹞（第五组）',
+'吴培芝（第五组）',
+'孙瑛琦（第五组组长）',
+'王    凯（第六组）',
+'刘凯明（第六组）',
+'吴柳燕（第六组）',
+'唐碧芸（第六组）',
+'程孟娉（第六组）',
+'金学蕾（第六组组长）',
+'吕心悦（第七组）',
+'杨芳芳（第七组）',
+'吴花花（第七组）',
+'潘宇奎（第七组）',
+'舒雨桐（第七组）',
+'熊雅玲（第七组组长）',
+'李婷婷（第八组）',
+'吴国宏（第八组）',
+'袁树义（第八组）',
+'赵启慧（第八组）',
+'潘    丽（第八组）',
+'吴明嘉（第八组组长）',
+'杨    阳（）'
+);
+
+//生成名字
+function showNames() {
+	clearInterval(t);
+	t = setInterval(function() {
+
+		//开始生成名字
+			document.getElementById("names").innerHTML = names[i];
+			i++;
+			if (i == names.length - 1) {
+				i = 0;
+			}
+		}, 30);
+}
+function stop() {
+	clearInterval(t);
+}
+</script>
+
+</body>
+</html>
